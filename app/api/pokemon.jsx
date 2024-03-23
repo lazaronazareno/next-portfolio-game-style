@@ -1,4 +1,4 @@
-export async function getPokemon(req, res) {
+/* export async function getPokemon(req, res) {
   try {
     const response = await fetch(
       'https://pokeapi.co/api/v2/pokemon?limit=10&offset=0'
@@ -21,13 +21,11 @@ export async function getPokemonById(req, res) {
   } catch (err) {
     return err.message
   }
-}
+} */
 
 export async function getAllProjects(req, res) {
   try {
-    const response = await fetch(
-      'https://portfolio-production-e5c8.up.railway.app/api/projects'
-    )
+    const response = await fetch(process.env.PORTFOLIO_API)
     const data = await response.json()
 
     return data
@@ -38,9 +36,7 @@ export async function getAllProjects(req, res) {
 
 export async function getProjectById(req, res) {
   try {
-    const response = await fetch(
-      `https://portfolio-production-e5c8.up.railway.app/api/projects/${req}`
-    )
+    const response = await fetch(`${process.env.PORTFOLIO_API}/${req}`)
     const data = await response.json()
 
     return data
