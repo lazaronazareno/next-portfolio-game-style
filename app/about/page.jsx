@@ -11,6 +11,11 @@ import {
 import Link from 'next/link'
 import { grandstander } from '@/components/HomeButton'
 
+export const metadata = {
+  title: 'Sobre Mí | Lazaro Vega Sanchez Portfolio',
+  description: 'Breve presentacion, stack tecnologico y contacto.'
+}
+
 const Page = () => {
   return (
     <div

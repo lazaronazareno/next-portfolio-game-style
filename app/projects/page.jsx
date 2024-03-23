@@ -4,6 +4,12 @@ import ProjectList from '@/components/ProjectList'
 import Link from 'next/link'
 import { Arrow } from '../utils'
 
+export const metadata = {
+  title: 'Proyectos | Lazaro Vega Sanchez Portfolio',
+  description:
+    'Proyectos de github/lazaronazareno como si fuera una seleccion de personajes de videojuego'
+}
+
 const Projects = async () => {
   const list = await getAllProjects()
 

@@ -6,6 +6,17 @@ import ProjectDetailsSkeleton from '@/components/ProjectDetailsSkeleton'
 import Link from 'next/link'
 import React, { Suspense } from 'react'
 
+export async function generateMetadata({ params }) {
+  const id = params.id
+
+  const data = await getProjectById(id)
+
+  return {
+    title: data.name + ' | Lazaro Vega Sanchez Portfolio',
+    description: data.description
+  }
+}
+
 const Page = async ({ params }) => {
   const id = params.id
   const data = await getProjectById(id)
